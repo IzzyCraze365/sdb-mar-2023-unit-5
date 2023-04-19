@@ -4,6 +4,7 @@ Adding Data to Website */
 console.log("it works from soccer");
 
 let tableBody = document.querySelector("tbody");
+let playerSelectElement = document.querySelector("#player-select");
 /* 
 tableBody.innerHTML = ` <tr>
 <td>1</td>
@@ -68,6 +69,16 @@ function tableDataBuilder(tableRow, playerDataToDisplay) {
   tableRow.appendChild(tableData);
 }
 
+// Delete Players Options
+function populatePlayerDropDown(playerArray){
+  playerSelectElement.innerHTML = "";
+  let htmlString = "";
+  for (let i = 0; i< playerArray.length; i++){
+    htmlString += `<option value="${i}">${playerArray[i].firstName} ${playerArray[i].lastName}</option>`
+  }
+  playerSelectElement.innerHTML = htmlString;
+}
+
 async function getallPlayers() {
   let url = "http://localhost:4000/player/view-all";
   try {
@@ -76,6 +87,7 @@ async function getallPlayers() {
     console.log(data);
     //displayInnerHTML(data.player); //! OPTION 1
     displayPlayers(data.player); //! OPTION 2
+    populatePlayerDropDown(data.player);
   } catch (error) {
     console.error(error);
   }
@@ -109,6 +121,32 @@ async function submitNewPlayer(e) {
     getallPlayers();
     // 5. Clear the form values
     soccerPlayerForm.reset()
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+let removePlayerForm = document.querySelector("#remove-player-form");
+removePlayerForm.addEventListener("submit", submitForRemoval);
+
+async function submitForRemoval(e) {
+  e.preventDefault();
+  try {
+    // 1. Ge tht evalue of the current selection
+console.log(playerSelectElement.value); //! TEST
+let playerIndex = playerSelectElement.value;
+    // 2. Build our URL out where we can delete
+let url = "http://localhost:4000/player/delete/" + playerIndex; // pulled from Postman
+    // 3. Create Request Options
+let requestOptions = {
+  method: "DELETE",
+}
+    // 4. Conduct the fetch
+  const response = await fetch(url, requestOptions);
+  const data = await response.json();
+  console.log(data);
+    // 5. If successful then we need to re-populate the table & the dropdown list
+    getallPlayers();
   } catch (error) {
     console.error(error);
   }

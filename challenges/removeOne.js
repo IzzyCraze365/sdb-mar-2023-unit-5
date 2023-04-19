@@ -38,7 +38,7 @@ let myArray = [
       "jerseyNumber": "121"
     }
   ];
-function removeOne(indexNumber){
+function removeOne(indexNumber, myArray){
     let newArray = [];
     for (let i = 0; i < myArray.length; i++) {
       if (i !== indexNumber) {
@@ -48,4 +48,12 @@ function removeOne(indexNumber){
     return newArray;
   }
 console.log(myArray);
-console.log(removeOne(1));
+console.log(removeOne(1, myArray));
+
+/* 
+//following is the other Group's code, it also works
+function removeOne(index, myArray) {
+  myArray.splice(index, 1);
+  return myArray;
+}
+ */

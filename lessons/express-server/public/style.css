@@ -6,6 +6,10 @@ Adding Data to Website */
   --brown: #333;
 }
 
+body{
+  margin: 0;
+}
+
 .header {
   background-color: var(--primary);
   color: white;
@@ -16,6 +20,11 @@ Adding Data to Website */
   text-shadow: 2px 2px var(--brown);
 }
 
+.column {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 10px;
+}
 table {
   border-collapse: collapse;
   width: 100%;
@@ -62,7 +71,8 @@ label {
 
 /* Input Field Styles */
 
-input[type="text"] {
+input[type="text"],
+select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;

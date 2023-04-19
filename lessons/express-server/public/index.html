@@ -1,4 +1,4 @@
-<!--  Unit 5 - Day 022 -->
+<!--  Unit 5 - Day 022 & 23 -->
 <!-- Adding Data to Website -->
 
 <!DOCTYPE html>
@@ -43,64 +43,83 @@
         </tr>
       </tbody>
     </table>
-    <!--  Form -->
+
+    <div class="column">
+      <!--  Add Player Form -->
+      <div class="form-container">
+        <h2>Soccer Player Form</h2>
+        <form>
+          <!-- Form Field -->
+          <label for="first-name">First Name: </label>
+          <input
+            type="text"
+            id="first-name"
+            placeholder="Enter first name..."
+            name="firstName"
+          />
+          <!-- Form Field End -->
+
+          <!-- Form Field -->
+          <label for="last-name">Last Name: </label>
+          <input
+            type="text"
+            id="last-name"
+            placeholder="Enter last name..."
+            name="lastName"
+          />
+          <!-- Form Field End -->
+
+          <!-- Form Field -->
+          <label for="position">Position: </label>
+          <input
+            type="text"
+            id="position"
+            placeholder="Enter Position..."
+            name="position"
+          />
+          <!-- Form Field End -->
+
+          <!-- Form Field -->
+          <label for="Team">Team </label>
+          <input
+            type="text"
+            id="Team"
+            placeholder="Enter team name..."
+            name="team"
+          />
+          <!-- Form Field End -->
+
+          <!-- Form Field -->
+          <label for="jesery-number">Jersey Number: </label>
+          <input
+            type="text"
+            id="jesery-number"
+            placeholder="Enter last name..."
+            name="jerseyNumber"
+          />
+          <!-- Form Field End -->
+
+          <!-- SUBMIT BUTTON -->
+          <input type="submit" value="SUBMIT" />
+        </form>
+      </div>
+    <!-- Delete Player Form -->
     <div class="form-container">
-      <h2>Soccer Player Form</h2>
-      <form>
-        <!-- Form Field -->
-        <label for="first-name">First Name: </label>
-        <input
-          type="text"
-          id="first-name"
-          placeholder="Enter first name..."
-          name="firstName"
-        />
-        <!-- Form Field End -->
+      <form id="remove-player-form">
+        <h2>Remove Player Form</h2>
+        <!-- Select Option Box -->
+        <label for="player-select">Choose Player: </label>
+        <select name="player" id="player-select">
+          <option value="0">Trever Striker</option>
+          <option value="1">Simon Davis</option>
+        </select>
 
-        <!-- Form Field -->
-        <label for="last-name">Last Name: </label>
-        <input
-          type="text"
-          id="last-name"
-          placeholder="Enter last name..."
-          name="lastName"
-        />
-        <!-- Form Field End -->
-
-        <!-- Form Field -->
-        <label for="position">Position: </label>
-        <input
-          type="text"
-          id="position"
-          placeholder="Enter Position..."
-          name="position"
-        />
-        <!-- Form Field End -->
-
-        <!-- Form Field -->
-        <label for="Team">Team </label>
-        <input
-          type="text"
-          id="Team"
-          placeholder="Enter team name..."
-          name="team"
-        />
-        <!-- Form Field End -->
-
-        <!-- Form Field -->
-        <label for="jesery-number">Jersey Number: </label>
-        <input
-          type="text"
-          id="jesery-number"
-          placeholder="Enter last name..."
-          name="jerseyNumber"
-        />
-        <!-- Form Field End -->
-
-        <!-- SUBMIT BUTTON -->
-        <input type="submit" value="SUBMIT" />
+        <!-- SUBMIT FOR DELETE BUTTON -->
+        <input type="submit" value="DELETE PLAYER" />
       </form>
     </div>
-    <script src="./index.js"></script>
-  </body>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
 </html>
