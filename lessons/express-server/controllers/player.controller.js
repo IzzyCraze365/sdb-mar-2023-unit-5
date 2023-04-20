@@ -1,3 +1,7 @@
+// Unit 5 - Day 024
+// player.controller.js
+// Rob did some crazy stuff in here on Day 24, so i just copied his code.
+
 const router = require("express").Router();
 // ! dbPath is the file path to the data based off of the relationship of the app.js file
 const dbPath = "./assets/player-db.json";
