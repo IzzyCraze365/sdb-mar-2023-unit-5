@@ -10,6 +10,8 @@
    - `/node_modules` is typed into it
 create a `app.js`
 updated our `package.json` with `app.js` instead of `index.js`
+-add the dotenv to the package.json
+    -dotenv: `npm install dotenv`
 
 
 ## Boiler Plate for Starting a Server
