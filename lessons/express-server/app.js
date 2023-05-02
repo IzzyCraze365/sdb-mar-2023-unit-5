@@ -2,11 +2,14 @@
 // App
 
 const express = require("express");
+const cors = require('cors') //! Added in Week 7
 const app = express();
 const PORT = 4000;
 //! Need to keep updating the controller list
 const practiceController = require("./controllers/practice.controller")
 const playerController = require("./controllers/player.controller")
+
+app.use(cors()) //! Added in Week 7
 
 app.use(express.json()); // THIS WILL ALLOW YOU TO SEND IN YORU PAYLOAD A JSON OBECT AND IT WILL PARSE IT FOR US - Middleware
 
